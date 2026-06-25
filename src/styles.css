@@ -1,0 +1,482 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-steel: var(--steel);
+  --color-amber-glow: var(--amber-glow);
+  --font-display: "Tajawal", "Cairo", system-ui, sans-serif;
+  --font-sans: "Cairo", "Tajawal", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+  /* Light mode — engineering blueprint */
+  --background: oklch(0.985 0.005 240);
+  --foreground: oklch(0.18 0.04 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.04 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.04 250);
+  --primary: oklch(0.66 0.16 230);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.015 240);
+  --secondary-foreground: oklch(0.22 0.05 250);
+  --muted: oklch(0.95 0.012 240);
+  --muted-foreground: oklch(0.5 0.025 250);
+  --accent: oklch(0.78 0.17 75);
+  --accent-foreground: oklch(0.18 0.04 250);
+  --destructive: oklch(0.62 0.23 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.9 0.015 240);
+  --input: oklch(0.92 0.012 240);
+  --ring: oklch(0.66 0.16 230);
+  --steel: oklch(0.45 0.06 245);
+  --amber-glow: oklch(0.78 0.17 75);
+  --chart-1: oklch(0.66 0.16 230);
+  --chart-2: oklch(0.78 0.17 75);
+  --chart-3: oklch(0.55 0.18 200);
+  --chart-4: oklch(0.7 0.18 145);
+  --chart-5: oklch(0.6 0.22 15);
+  --sidebar: oklch(0.22 0.04 250);
+  --sidebar-foreground: oklch(0.95 0.01 240);
+  --sidebar-primary: oklch(0.66 0.16 230);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.3 0.04 250);
+  --sidebar-accent-foreground: oklch(0.95 0.01 240);
+  --sidebar-border: oklch(0.3 0.03 250);
+  --sidebar-ring: oklch(0.66 0.16 230);
+}
+
+.dark {
+  --background: oklch(0.16 0.03 250);
+  --foreground: oklch(0.96 0.01 240);
+  --card: oklch(0.21 0.035 250);
+  --card-foreground: oklch(0.96 0.01 240);
+  --popover: oklch(0.21 0.035 250);
+  --popover-foreground: oklch(0.96 0.01 240);
+  --primary: oklch(0.7 0.17 225);
+  --primary-foreground: oklch(0.12 0.03 250);
+  --secondary: oklch(0.26 0.035 250);
+  --secondary-foreground: oklch(0.96 0.01 240);
+  --muted: oklch(0.24 0.03 250);
+  --muted-foreground: oklch(0.7 0.02 240);
+  --accent: oklch(0.78 0.17 75);
+  --accent-foreground: oklch(0.16 0.03 250);
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.7 0.17 225);
+  --steel: oklch(0.58 0.06 240);
+  --amber-glow: oklch(0.78 0.17 75);
+  --chart-1: oklch(0.7 0.17 225);
+  --chart-2: oklch(0.78 0.17 75);
+  --chart-3: oklch(0.6 0.18 200);
+  --chart-4: oklch(0.72 0.18 145);
+  --chart-5: oklch(0.65 0.22 15);
+  --sidebar: oklch(0.13 0.03 250);
+  --sidebar-foreground: oklch(0.95 0.01 240);
+  --sidebar-primary: oklch(0.7 0.17 225);
+  --sidebar-primary-foreground: oklch(0.12 0.03 250);
+  --sidebar-accent: oklch(0.24 0.035 250);
+  --sidebar-accent-foreground: oklch(0.96 0.01 240);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.7 0.17 225);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    direction: rtl;
+    text-align: right;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    /* Enhanced Arabic typography */
+    font-feature-settings: "liga" 1, "dlig" 1, "calt" 1, "ss01" 1, "cv11" 1, "rlig" 1;
+    -webkit-font-feature-settings: "liga" 1, "dlig" 1, "calt" 1, "ss01" 1, "cv11" 1, "rlig" 1;
+    -moz-font-feature-settings: "liga" 1, "dlig" 1, "calt" 1, "ss01" 1, "cv11" 1, "rlig" 1;
+    /* Improve Arabic text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    /* RTL text alignment */
+    direction: rtl;
+    text-align: right;
+    /* Arabic-specific line height */
+    line-height: 1.6;
+    /* Word break for Arabic */
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Blueprint grid background utility */
+  .bg-blueprint {
+    background-image:
+      linear-gradient(to right, color-mix(in oklab, var(--primary) 12%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, var(--primary) 12%, transparent) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+/* Print styles for PDF reports */
+@media print {
+  body * { visibility: hidden !important; }
+  .print-area, .print-area * { visibility: visible !important; }
+  .print-area {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    padding: 24px !important;
+    background: white !important;
+    color: black !important;
+    direction: rtl !important;
+  }
+  .no-print { display: none !important; }
+}
+
+/* 3D Enhancement Styles */
+@layer utilities {
+  /* 3D Perspective */
+  .perspective-3d {
+    perspective: 1200px;
+    transform-style: preserve-3d;
+  }
+
+  .perspective-full {
+    perspective: 2000px;
+    transform-style: preserve-3d;
+  }
+
+  /* 3D Transform Utilities */
+  .transform-3d {
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  /* Depth layers */
+  .depth-1 {
+    transform: translateZ(10px);
+  }
+
+  .depth-2 {
+    transform: translateZ(20px);
+  }
+
+  .depth-3 {
+    transform: translateZ(30px);
+  }
+
+  /* 3D Lighting effects */
+  .light-3d {
+    filter: drop-shadow(0 10px 25px rgba(59, 130, 246, 0.1))
+            drop-shadow(0 20px 40px rgba(139, 92, 246, 0.05));
+  }
+
+  .light-3d-strong {
+    filter: drop-shadow(0 15px 35px rgba(59, 130, 246, 0.2))
+            drop-shadow(0 25px 50px rgba(139, 92, 246, 0.1));
+  }
+
+  /* Smooth 3D transitions */
+  .smooth-3d {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.320, 1),
+                filter 0.3s ease-out,
+                box-shadow 0.3s ease-out;
+  }
+
+  /* Frosted glass with 3D depth */
+  .glass-3d {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  }
+
+  .dark .glass-3d {
+    background: rgba(15, 23, 42, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Glow effects for 3D */
+  .glow-primary {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.3),
+                 0 0 40px rgba(59, 130, 246, 0.15);
+  }
+
+  .glow-accent {
+    text-shadow: 0 0 20px rgba(202, 138, 4, 0.3),
+                 0 0 40px rgba(202, 138, 4, 0.15);
+  }
+
+  /* 3D Floating animation base */
+  .floating-base {
+    animation: float-3d 6s ease-in-out infinite;
+  }
+
+  @keyframes float-3d {
+    0%, 100% {
+      transform: translateY(0px) translateZ(0);
+    }
+    50% {
+      transform: translateY(-20px) translateZ(10px);
+    }
+  }
+
+  /* Shimmer effect for 3D cards */
+  .shimmer-3d {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-3d::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 100%
+    );
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+}
+
+/* Smooth scrolling with 3D effects */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced 3D text rendering */
+@supports (font-smooth: always) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Arabic Typography Enhancement */
+@layer base {
+  /* All text elements - proper RTL support */
+  h1, h2, h3, h4, h5, h6 {
+    direction: rtl;
+    text-align: right;
+    word-spacing: normal;
+    letter-spacing: 0.02em;
+  }
+
+  p, span, div, a, button, label, input, textarea {
+    direction: rtl;
+    text-align: right;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Navigation elements */
+  nav {
+    direction: rtl;
+  }
+
+  nav a {
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* Form elements */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  textarea,
+  select {
+    direction: rtl;
+    text-align: right;
+    padding-right: 1rem;
+    padding-left: 0.5rem;
+  }
+
+  /* Inline code and code blocks - should remain LTR for special cases */
+  code, pre {
+    direction: ltr;
+    text-align: left;
+  }
+
+  /* Lists */
+  ul, ol {
+    padding-right: 2rem;
+    padding-left: 0;
+  }
+
+  li {
+    direction: rtl;
+    text-align: right;
+  }
+}
+
+/* Arabic Language Specific Utilities */
+@layer utilities {
+  /* RTL Direction */
+  .rtl {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .ltr {
+    direction: ltr;
+    text-align: left;
+  }
+
+  /* Arabic Text Optimization */
+  .text-arabic {
+    font-family: "Tajawal", "Cairo", "Arabic Typesetting", sans-serif;
+    font-feature-settings: "liga" 1, "dlig" 1, "calt" 1, "rlig" 1;
+    -webkit-font-feature-settings: "liga" 1, "dlig" 1, "calt" 1, "rlig" 1;
+    direction: rtl;
+    text-align: right;
+    line-height: 1.8;
+    word-spacing: 0.1em;
+    letter-spacing: 0.02em;
+  }
+
+  /* Arabic Heading Optimization */
+  .text-arabic-heading {
+    font-family: "Tajawal", sans-serif;
+    font-weight: 700;
+    font-feature-settings: "liga" 1, "dlig" 1, "calt" 1;
+    direction: rtl;
+    text-align: right;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+
+  /* Prevent Arabic text from breaking incorrectly */
+  .no-break-arabic {
+    word-break: keep-all;
+    white-space: nowrap;
+  }
+
+  /* Arabic paragraph text */
+  .arabic-paragraph {
+    direction: rtl;
+    text-align: right;
+    text-justify: auto;
+    line-height: 1.8;
+    word-spacing: normal;
+  }
+
+  /* Arabic button text */
+  .arabic-button {
+    direction: rtl;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* Improve Arabic text in cards */
+  .card-arabic {
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* Arabic link styling */
+  .link-arabic {
+    direction: rtl;
+    text-align: right;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .link-arabic:hover {
+    text-decoration: underline;
+  }
+
+  /* Text with proper spacing for Arabic */
+  .arabic-spaced {
+    word-spacing: 0.15em;
+    letter-spacing: 0.03em;
+    line-height: 1.9;
+  }
+
+  /* Improved readability for Arabic on backgrounds */
+  .arabic-contrast {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
