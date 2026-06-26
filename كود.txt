@@ -1,0 +1,117 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
+import { motion } from "framer-motion";
+import { Calculator, Building2, Users, FileText, ArrowLeft, Boxes, PaintRoller, Layers, Hammer, Wrench, Ruler, Mountain, Pickaxe } from "lucide-react";
+
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "BuildIQ Iraq ó Õ”«»«  «·»‰«¡ «·–ﬂÌ… »«·œÌ‰«— «·⁄—«ﬁÌ" },
+      { name: "description", content: "«Õ”» ﬂ„Ì«  Ê ﬂ«·Ì› «·ÿ«»Êﬁ° «·ﬂÊ‰ﬂ—Ì ° «·ÕœÌœ° «·’»€° Ê«·ﬂ«‘Ì ·„‘«—Ì⁄ﬂ ›Ì «·⁄—«ﬁ.  ﬁ«—Ì— PDF «Õ —«›Ì… Ê≈œ«—… ﬂ«„·… ··⁄„·«¡." },
+      { property: "og:title", content: "BuildIQ Iraq" },
+      { property: "og:description", content: "„‰’… «Õ —«›Ì… ·Õ”«»«  «·»‰«¡ »«·œÌ‰«— «·⁄—«ﬁÌ" },
+    ],
+  }),
+  component: Index,
+});
+
+function Index() {
+  const calcs = [
+    { icon: Boxes, name: "«·ÿ«»Êﬁ", to: "/calculators/brick", color: "from-orange-500/20 to-amber-500/10" },
+    { icon: Layers, name: "«·ﬂÊ‰ﬂ—Ì ", to: "/calculators/concrete", color: "from-slate-500/20 to-zinc-500/10" },
+    { icon: Wrench, name: "«·ÕœÌœ", to: "/calculators/steel", color: "from-blue-500/20 to-sky-500/10" },
+    { icon: PaintRoller, name: "«·’»€", to: "/calculators/paint", color: "from-emerald-500/20 to-teal-500/10" },
+    { icon: Hammer, name: "«·ﬂ«‘Ì", to: "/calculators/tile", color: "from-rose-500/20 to-pink-500/10" },
+    { icon: Ruler, name: "„”«Õ… «·€—›", to: "/calculators/room", color: "from-violet-500/20 to-purple-500/10" },
+    { icon: Mountain, name: "«·—„·", to: "/calculators/sand", color: "from-yellow-500/20 to-amber-500/10" },
+    { icon: Pickaxe, name: "«·Õ’Ï", to: "/calculators/gravel", color: "from-stone-500/20 to-neutral-500/10" },
+    {
+  icon: Building2,
+  name: "«·„‰“· «·ﬂ«„·",
+  to: "/house",
+  color: "from-cyan-500/20 to-blue-500/10",
+},
+  ];
+  return (
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
+
+      <nav className="relative z-10 max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="size-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+            <Building2 className="size-5 text-primary-foreground" />
+          </div>
+          <span className="font-extrabold text-xl tracking-tight">BuildIQ <span className="text-accent">Iraq</span></span>
+        </div>
+        <div className="flex items-center gap-3">
+          <Link to="/auth" className="text-sm text-muted-foreground hover:text-foreground transition"> ”ÃÌ· «·œŒÊ·</Link>
+          <Link to="/auth" className="rounded-lg bg-primary text-primary-foreground px-4 py-2 text-sm font-semibold hover:opacity-90 transition">
+            «»œ√ „Ã«‰«
+          </Link>
+        </div>
+      </nav>
+
+      <section className="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-24 text-center">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/50 backdrop-blur px-4 py-1.5 text-xs text-muted-foreground mb-6">
+            <span className="size-2 rounded-full bg-accent animate-pulse" /> „‰’… Â‰œ”Ì… «Õ —«›Ì… ··⁄—«ﬁ
+          </div>
+          <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
+            «Õ”» ﬂ„Ì«  «·»‰«¡<br />
+            <span className="bg-gradient-to-l from-primary via-accent to-primary bg-clip-text text-transparent">»œﬁ… Â‰œ”Ì…</span>
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
+            Õ«”»«  «Õ —«›Ì… ··ÿ«»Êﬁ° «·ﬂÊ‰ﬂ—Ì ° «·ÕœÌœ° «·’»€ Ê«·ﬂ«‘Ì. √”⁄«— »«·œÌ‰«— «·⁄—«ﬁÌ°  ﬁ«—Ì— PDF° Ê≈œ«—… ﬂ«„·… ··„‘«—Ì⁄ Ê«·⁄„·«¡.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link to="/auth" className="group rounded-xl bg-primary text-primary-foreground px-6 py-3 font-semibold hover:opacity-90 transition inline-flex items-center gap-2">
+              √‰‘∆ Õ”«»ﬂ «·¬‰ <ArrowLeft className="size-4 group-hover:-translate-x-1 transition" />
+            </Link>
+            <Link to="/auth" className="rounded-xl border border-border bg-card/50 backdrop-blur px-6 py-3 font-semibold hover:bg-card transition">
+              œŒÊ· «·Õ”«»
+            </Link>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="mt-20 grid grid-cols-2 sm:grid-cols-5 gap-4 max-w-4xl mx-auto"
+        >
+          {calcs.map((c) => (
+            <Link
+              key={c.name}
+              to={c.to}
+              className={`relative rounded-2xl border border-border bg-gradient-to-br ${c.color} backdrop-blur p-5 hover:scale-105 hover:border-primary/50 transition block text-center cursor-pointer`}
+            >
+              <c.icon className="size-8 text-foreground mb-3 mx-auto" />
+              <div className="text-sm font-semibold">{c.name}</div>
+            </Link>
+          ))}
+        </motion.div>
+      </section>
+
+      <section className="relative z-10 max-w-6xl mx-auto px-6 pb-24 grid sm:grid-cols-3 gap-6">
+        {[
+          { icon: Calculator, title: "Õ«”»«  œﬁÌﬁ…", desc: "Œ„” Õ«”»«  Â‰œ”Ì…  ⁄ „œ ⁄·Ï „⁄«ÌÌ— «·»‰«¡ «·⁄—«ﬁÌ…" },
+          { icon: Users, title: "≈œ«—… «·⁄„·«¡", desc: "«Õ›Ÿ »Ì«‰«  ⁄„·«∆ﬂ Ê«—»ÿ ﬂ· „‘—Ê⁄ »’«Õ»Â" },
+          { icon: FileText, title: " ﬁ«—Ì— PDF", desc: "’œˆ¯—  ﬁ«—Ì— «Õ —«›Ì… »«·⁄—»Ì… Ã«Â“… ··ÿ»«⁄…" },
+        ].map((f) => (
+          <div key={f.title} className="rounded-2xl border border-border bg-card/60 backdrop-blur p-6">
+            <div className="size-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <f.icon className="size-5 text-primary" />
+            </div>
+            <h3 className="font-bold text-lg mb-1">{f.title}</h3>
+            <p className="text-sm text-muted-foreground">{f.desc}</p>
+          </div>
+        ))}
+      </section>
+
+      <footer className="relative z-10 border-t border-border py-6 text-center text-sm text-muted-foreground">
+        © {new Date().getFullYear()} BuildIQ Iraq ó Ã„Ì⁄ «·ÕﬁÊﬁ „Õ›ÊŸ…
+      </footer>
+    </div>
+  );
+}
